@@ -1,0 +1,143 @@
+/* RESET NAVEGADORES y FUENTE */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Permanent Marker", cursive;
+  text-decoration: none;
+}
+
+/* header y menu de navegacion */
+
+header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color:lightgray;
+}
+
+header a {
+  height: 100%;
+}
+
+header a img {
+  height: 100%;
+  margin-left: 1rem;
+}
+
+header ul li {
+  display: inline-block;
+  margin-right:2rem;
+}
+
+header ul li:hover {
+  background-color: rgb(156, 133, 0);
+  color: black;
+  padding: 0.5rem;
+  border-radius: 15%;
+}
+
+header ul li a:visited {
+  color: black;
+}
+
+#boton img {
+    height: 100%;
+    padding: 1rem;
+}
+#boton {
+    display:none ;
+    height: 100%;
+}
+
+/* primera seccion main  */
+
+.primera__seccion {
+  height: 600px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-image: url(./recursos/cabecera.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: white;
+}
+
+.primera__seccion div {
+    margin: 5rem;
+    font-size: 2rem;
+}
+
+/* segunda seccion servicios*/
+
+#servicios {
+    text-align: center;
+    margin: 3rem;
+}
+
+.contenedor__cards {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contenedor__cards .card {
+    padding: 3rem;
+    width: 400px;
+    background-color:lightgray;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.contenedor__cards .card img {
+    width: 100%;
+}
+
+.contenedor__cards .card h3  {
+    margin: 2rem;
+}
+
+.contenedor__cards .card p {
+    text-align: justify;
+}
+
+/* tercera seccion satisfaccion */
+
+.tercera__seccion {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top:5rem;
+    background-color: lightgray;
+    height: 600px;
+    background-image: url(./recursos/half-section.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.tercera__seccion div {
+    height: 100px;
+    width: 600px;
+    margin-right: 10rem;
+}
+
+.tercera__seccion div h3 {
+    margin: 0 0 3rem 0;
+    text-align: center;
+}
+
+/* pie de pagina */
+
+footer {
+    height: 100px;
+    background-color:darkgrey;
+    text-align: center;
+    padding: 35px;
+    text-decoration: none;
+}
+footer small a:visited {
+    color: black;
+}

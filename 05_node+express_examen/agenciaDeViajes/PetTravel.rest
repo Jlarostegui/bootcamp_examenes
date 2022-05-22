@@ -1,0 +1,32 @@
+GET http://localhost:3000/api/travel
+
+####
+GET http://localhost:3000/api/travel/2
+
+###
+POST http://localhost:3000/api/travel/new
+Content-Type: application/json
+
+{
+    "vuelta": "2022-08-01",
+    "ida": "2022-07-15",
+    "hotel": "hotel maldivas",
+    "direccion": "direccion hotel maldivas",
+    "seguro": "SI"
+}
+
+####
+PUT http://localhost:3000/api/travel/edit/17
+Content-Type: application/json
+
+{
+    "id": 4,
+    "vuelta": "2022-07-15",
+    "ida": "2022-07-01",
+    "hotel": "hotel berlin",
+    "direccion": "direccion hotel berlin",
+    "seguro": "SI"
+}
+
+####
+DELETE http://localhost:3000/api/travel/17

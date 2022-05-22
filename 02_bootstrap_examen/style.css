@@ -1,0 +1,12 @@
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Playfair Display';
+}
+    
+body {
+    font-family:roboto;
+}
+
+#titulo {
+        background-image: url(https://picsum.photos/id/26/1500/300/);
+        background-size: cover;
+}   

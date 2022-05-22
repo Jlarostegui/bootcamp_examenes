@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+    div.container.border.mt-3
+      div.card-body
+        a.me-auto.btn.btn-success.w-100.mb-2(href="/") Menu
+        a.me-auto.btn.btn-success.w-100(href="clients/newClient") Nuevo Cliente
+ 
+        h5.fs-5.mt-3.text-center Listado de Clientes
+        table(class="table table-success table-striped fs-5 text-start")
+          thead 
+            tr 
+              th Dni
+              th Nombre 
+              th Apellidos
+              th Telefono
+              th Datos
+              th Enviar 
+              th Editar
+              th Eliminar
+          tbody
+            each client in arrClients
+              tr 
+              td= client.dni
+              td= client.nombre
+              td= client.apellidos
+              td= client.telefono
+              td
+                a.btn.btn-info.btn-md(href="/clients/data/"+client.id) Datos Viaje
+              td 
+                a.btn.btn-info.btn-md(href=`mailto:${client.email}`) Email
+              td
+                a.btn.btn-success.btn-md(href="/clients/update/"+client.id) Editar
+              td 
+                a.btn.btn-danger.btn-md(href="/clients/delete/"+client.id,onclick="return confirm('¿Estás seguro?')") Borrar  

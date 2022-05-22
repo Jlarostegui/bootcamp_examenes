@@ -1,0 +1,45 @@
+GET http://localhost:3000/api/clients
+
+### 
+GET http://localhost:3000/api/clients/new
+
+###
+GET http://localhost:3000/api/clients/18
+
+###
+PUT  http://localhost:3000/api/clients/edit/18
+Content-Type: application/json
+
+{
+  "nombre": "Perio",
+  "apellidos": "de los palotes",
+  "direccion": "En su casa esta",
+  "telefono": "661309060",
+  "fecha_nacimiento": "2000-01-01",
+  "dni": "12345678A",
+  "email": "insertado@express.com"
+}
+
+###
+GET http://localhost:3000/api/clients/110
+
+###
+POST http://localhost:3000/api/clients
+Content-Type: application/json
+
+{
+  "nombre": "Perio",
+  "apellidos": "Perez",
+  "direccion": "Calle los molinos",
+  "dni": "53300203E",
+  "telefono": "665308089",
+  "fecha_nacimiento": "2000-01-01",
+  "dni  ": "12345678A",
+  "email": "insertado@express.com"
+}
+
+###
+DELETE  http://localhost:3000/api/clients/36
+
+
+r

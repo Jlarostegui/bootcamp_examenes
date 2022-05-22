@@ -1,0 +1,28 @@
+extends ../layout.pug
+
+block content
+    form(method="POST", action="/clients/create" class="container")
+        a.me-auto.btn.btn-success.w-100.mb-3(href="/clients") Volver a Clientes 
+        .mb-3
+            label.form-label Nombre:
+            input.form-control(type="text", name="nombre")
+        .mb-3
+            label.form-label Apellidos 
+            input.form-control(type="text", name="apellidos")
+        .mb-3
+            label.form-label Direccion: 
+            input.form-control(type="text", name="direccion")
+        .mb-3
+            label.form-label Telefono:
+            input.form-control(type="text", name="telefono")
+        .mb-3
+            label.form-label Fecha Nacimiento:
+            input.form-control(type="date", name="fecha_nacimiento")
+        .mb-3
+            label.form-label DNI:
+            input.form-control(type="text", name="dni")
+        .mb-3
+            label.form-label Email:
+            input.form-control(type="email", name="email")
+        .mb-3
+            input(type="submit", value="Guardar" class="btn btn-success w-100 mb-2")

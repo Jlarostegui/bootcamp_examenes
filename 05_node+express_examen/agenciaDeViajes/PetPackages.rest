@@ -1,0 +1,31 @@
+GET http://localhost:3000/api/packages
+
+####
+GET http://localhost:3000/api/packages/2
+
+###
+POST http://localhost:3000/api/packages/new
+Content-Type: application/json
+
+{
+  "ciudad": "Madrid",
+  "latitud": 40.4165,
+  "longitud":-3.666667,
+  "pais": "España",
+  "presentacion": "Una ciudad donde puedes encontrar todo lo que necesites"
+}
+
+####
+PUT http://localhost:3000/api/packages/edit/2
+Content-Type: application/json
+
+{
+  "ciudad": "Madrid",
+  "latitud": 40.4165,
+  "longitud":-3.666667,
+  "pais": "España",
+  "presentacion": "Una ciudad donde puedes encontrar todo lo que necesites"
+}
+
+####
+DELETE http://localhost:3000/api/packages/20

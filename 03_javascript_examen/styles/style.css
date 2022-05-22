@@ -1,0 +1,15 @@
+body {
+  background-color: rgb(60, 65, 62);
+}
+
+#output li {
+  width: 30%;
+  font-size: 1.7em;
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+#output li i {
+  cursor: pointer;
+}
+

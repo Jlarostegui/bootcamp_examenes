@@ -1,0 +1,18 @@
+<section class="container mt-5">
+  <div class="card mb-3" *ngFor="let id of post">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img [src]="id.img" class="img-fluid rounded-start" alt="{{id.author}}">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-title">{{id.title}}</h3>
+          <h5 class="card-text">{{id.category.title}}</h5>
+          <p class="card-text"><small class="text-muted">{{id.author}}</small></p>
+          <p class="card-text my-4">{{id.text}}</p>
+        </div>
+      </div>
+      <button class="btn btn-dark w-100" [routerLink]="['/home']">Volver</button>
+    </div>
+  </div>
+</section>

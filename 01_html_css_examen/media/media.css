@@ -1,0 +1,54 @@
+/*navegacion mobile */
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+
+/*header, navegación y 1º seccion */
+    header {
+        position: sticky; top: 0px;     
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    header ul li {
+        display: none;
+    }
+    
+    #boton {
+        display: initial;
+    }
+
+/* 2º seccion servicios*/
+
+    .contenedor__cards {
+        flex-direction: column;
+    }
+
+    .contenedor__cards .card {
+        border: 1rem solid white;
+    }
+
+/* 3º sección satisfaccion */
+    .tercera__seccion {
+        height: 700px;
+    }
+   .tercera__seccion h3 {
+        padding-left: 10rem;
+        height: 70px;
+    }   
+
+    .tercera__seccion div p {
+        width: 300px;
+        padding: 0 0 0rem 10rem;
+    }
+
+
+}
+
+
+

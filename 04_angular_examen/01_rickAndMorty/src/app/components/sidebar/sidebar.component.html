@@ -1,0 +1,14 @@
+<figure class="logo">
+    <img src="../../../assets/images/logo2.png" alt="rickAndMorty">
+</figure>
+<nav>
+    <ul class="characters">
+        <li *ngFor="let character of arrCharacters"routerLinkActive="activate" [routerLink]="['/character', character.id]">
+            {{character?.name}}
+        </li>
+    </ul>
+    <div class="buttons">
+        <div *ngIf="prev" (click)="prevPage()">PREV</div>
+        <div *ngIf="next" (click)="nextPage()">NEXT</div>
+    </div>
+</nav>

@@ -1,0 +1,47 @@
+<section class="mt-5">
+  <div class="container w-100">
+        <h2 class="text-center border-bottom border-4 border-dark shadow">Crear nuevo post</h2>
+        <form novalidate [formGroup]="formularioNewPost" (ngSubmit)="saveDataForm()">
+            <div class="my-2">
+                <label class="form-label" for="title">Titulo:</label>
+                <input class="form-control" type="text" placeholder="Introduce el titulo de tu publicación" formControlName="title">
+                <p *ngIf="checkRequired('title', 'required')">!!!!!El titulo es un campo obligatorio¡¡¡¡¡</p>
+                <p *ngIf="checkRequired('title', 'minlength')">!!!!!EL titulo requiere de 4 catacteres como minimo¡¡¡¡¡</p>
+            </div>
+            <div class="row my-2">
+              <div class="col-6">
+                <label class="form-label"  for="date">Fecha:</label>
+                <input class="form-control" type="text" placeholder="{{fecha | date:'dd/MM/yyyy'}}"formControlName="date">
+                <p *ngIf="checkRequired('date', 'required')">!!!!!La Fecha es un campo obligatorio¡¡¡¡¡</p>
+                <p *ngIf="checkRequired('date', 'pattern')">!!!!!La Fecha tiene que ser en formato dd/mm/aaaa¡¡¡¡¡</p>
+
+            </div>
+            <div class="col-6" >
+                <label class="form-label" class="form-label" for="category">Categoria: </label>
+                <select class="form-select" name="category" id="category" formControlName="category">
+                  <option selected >Elige la categoria de tu Post</option>
+                  <option *ngFor="let category of arrCategories" [value]="category.title">{{category.title}}</option>
+                </select>
+            </div>
+            </div>
+          <div class="my-2">
+                <label class="form-label" for="img">Imagen:</label>
+                <input class="form-control" type="text" formControlName="img">
+                <p *ngIf="checkRequired('img', 'required')">!!!!!La Imagen es un campo obligatorio¡¡¡¡¡</p>
+                <p *ngIf="checkRequired('img', 'pattern')">!!!!!La Imagen tiene que ser una url valida¡¡¡¡¡</p>
+
+          </div>
+          <div class="my-2 my-3">
+                <label class="form-label" for="text">Contenido:</label>
+                <textarea class="form-control " type="text" id="text" cols="30" rows="10" formControlName="text"></textarea>
+                <p *ngIf="checkRequired('text', 'required')">!!!!!El contenido es un campo obligatorio¡¡¡¡¡</p>
+                <p *ngIf="checkRequired('text', 'minlength')">!!!!!EL contenido requiere de 10 catacteres como minimo¡¡¡¡¡</p>
+
+
+          </div>
+          <div> 
+                <button class="btn btn-dark w-100 " [disabled]="!formularioNewPost.valid"  type="submit">Guardar</button>
+          </div>
+      </form>
+  </div>
+</section>

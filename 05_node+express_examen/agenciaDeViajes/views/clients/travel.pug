@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+  div.container.border.mt-3
+      div.card-body
+        a.me-auto.btn.btn-success.w-100.mb-2(href="/clients") Menu
+ 
+        h5.fs-5.mt-3 Viajes de #{client.nombre} #{client.apellidos} 
+        p Telefono: #{client.telefono}
+        
+        table(class="table table-success table-striped fs-5 text-start")
+          thead 
+            tr 
+              th Ida
+              th Vuelta 
+              th Hotel
+              th Direccion
+              th Seguro
+          tbody
+              tr 
+              td #{travel.ida}
+              td #{travel.vuelta}
+              td #{travel.hotel}
+              td #{travel.direccion}
+              td #{travel.seguro}
+
+          
