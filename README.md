@@ -1,1 +1,1 @@
-Estos son los examenes realizados durante el bootcamp de codehouose
+Estos son los examenes realizados durante el bootcamp de codehouse
