@@ -4,7 +4,7 @@ namespace ApoloApiDataAccess.contracts.Repositories
 {
      public interface ICustomerRepository
     {
-        CustormersDto ? GetCustomerById(int productCode);
+        CustormersDto ? GetCustomerByName(string name);
        
     }
 }

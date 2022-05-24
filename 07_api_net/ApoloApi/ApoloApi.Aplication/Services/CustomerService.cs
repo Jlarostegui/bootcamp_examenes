@@ -19,9 +19,9 @@ namespace ApoloApi.Aplication.Services
 
 
     
-        public CustomerResponse? GetCustomerResponse(int code)
+        public CustomerResponse? GetCustomerResponse(string name)
         {
-            CustormersDto? customer = _CostumerRepository.GetCustomerById(code);
+            CustormersDto? customer = _CostumerRepository.GetCustomerByName(name);
             CustomerResponse result = new CustomerResponse();
             if (customer != null)
             {

@@ -12,11 +12,11 @@ namespace ApoloApi.DataAccess.Repositories
             _context = context;
         }
 
-        public CustormersDto? GetCustomerById(int customerCode)
+        public CustormersDto? GetCustomerByName(string name)
         {
             var query =
                 from customer in _context.Customers
-                where customer.CustomerNumber == customerCode
+                where customer.CustomerName.Contains(name) 
                 select new CustormersDto
                 {
                     CustomerNumber = customer.CustomerNumber,

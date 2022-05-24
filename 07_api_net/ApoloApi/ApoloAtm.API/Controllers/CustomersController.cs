@@ -20,10 +20,10 @@ namespace ApoloAtm.API.Controllers
 
         
         [HttpGet]
-        [Route("{code}")]
-        public IActionResult GetCustomerById(int code)
+        [Route("{name}")]
+        public IActionResult GetCustomerByName(string name)
         {
-            CustomerResponse? customer = _icustomerService.GetCustomerResponse(code);
+            CustomerResponse? customer = _icustomerService.GetCustomerResponse(name);
             if (customer != null)
             {
                 return Ok(customer);
