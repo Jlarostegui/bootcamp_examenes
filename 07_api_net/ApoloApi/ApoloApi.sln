@@ -15,13 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Business", "03-Business"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Application", "02-Application", "{0697C61F-5DBC-4A88-97CD-722910C637C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApoloApi.Aplication", "ApoloApi.Aplication\ApoloApi.Aplication.csproj", "{0DC477EA-1343-4BC1-8FC6-B5B833C0F455}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApoloApi.Aplication", "ApoloApi.Aplication\ApoloApi.Aplication.csproj", "{0DC477EA-1343-4BC1-8FC6-B5B833C0F455}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApoloApi.Application.contracts", "ApoloApi.Application.contracts\ApoloApi.Application.contracts.csproj", "{E583C4DD-A4E8-44D5-BD59-418CC62FF3FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApoloApi.Application.contracts", "ApoloApi.Application.contracts\ApoloApi.Application.contracts.csproj", "{E583C4DD-A4E8-44D5-BD59-418CC62FF3FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApoloApi.BusinessModels", "ApoloApi.BusinessModels\ApoloApi.BusinessModels.csproj", "{DE0893D3-2BC4-426C-A80B-756337F491A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApoloApi.BusinessModels", "ApoloApi.BusinessModels\ApoloApi.BusinessModels.csproj", "{DE0893D3-2BC4-426C-A80B-756337F491A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApoloApiDataAccess.contracts", "ApoloApiDataAccess.contracts\ApoloApiDataAccess.contracts.csproj", "{027EF950-F4EA-40F6-A056-1CA57CB94B88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApoloApiDataAccess.contracts", "ApoloApiDataAccess.contracts\ApoloApiDataAccess.contracts.csproj", "{027EF950-F4EA-40F6-A056-1CA57CB94B88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05-Cross Cutting", "05-Cross Cutting", "{EF770B34-6990-42EF-BB38-99266F320F9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApoloApi.CrossCutting", "ApoloApi.CrossCutting\ApoloApi.CrossCutting.csproj", "{C2E108CD-3B5A-4D07-9BB9-3EFC107F525C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +57,10 @@ Global
 		{027EF950-F4EA-40F6-A056-1CA57CB94B88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{027EF950-F4EA-40F6-A056-1CA57CB94B88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{027EF950-F4EA-40F6-A056-1CA57CB94B88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2E108CD-3B5A-4D07-9BB9-3EFC107F525C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2E108CD-3B5A-4D07-9BB9-3EFC107F525C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2E108CD-3B5A-4D07-9BB9-3EFC107F525C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2E108CD-3B5A-4D07-9BB9-3EFC107F525C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +72,7 @@ Global
 		{E583C4DD-A4E8-44D5-BD59-418CC62FF3FA} = {0697C61F-5DBC-4A88-97CD-722910C637C6}
 		{DE0893D3-2BC4-426C-A80B-756337F491A2} = {56D3DEAE-2861-4A66-99A5-AFB3022D5557}
 		{027EF950-F4EA-40F6-A056-1CA57CB94B88} = {453B73DE-40A0-451C-8978-2B7DDA0E4CFE}
+		{C2E108CD-3B5A-4D07-9BB9-3EFC107F525C} = {EF770B34-6990-42EF-BB38-99266F320F9C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FABE1BFE-55BF-41CF-8A74-239D6BA89688}

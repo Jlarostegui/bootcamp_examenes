@@ -1,20 +1,12 @@
-
-using ApoloApi.Aplication.Services;
-using ApoloApi.Application.contracts.Services;
+using ApoloApi.CrossCutting.Configuration;
 using ApoloApi.DataAccess;
-using ApoloApi.DataAccess.Repositories;
-using ApoloApiDataAccess.contracts;
-using ApoloApiDataAccess.contracts.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
-builder.Services.AddTransient<IProductRepository, ProductRepository>();
-builder.Services.AddTransient<IProductService,ProductService>();
-builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();
-builder.Services.AddTransient<ICustomerService, CustomerService>();
+IoC.Register(builder.Services, builder.Configuration);
+
 
 string mySqlConnectionStr = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApoloApiDataAccessContext>(
