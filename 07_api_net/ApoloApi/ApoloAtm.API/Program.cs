@@ -1,6 +1,19 @@
+using ApoloApi.DataAccess;
+using ApoloApiDataAccess.contracts;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+string mySqlConnectionStr = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<ApoloApiDataAccessContext>(
+    item => item.UseMySql(
+     mySqlConnectionStr,
+     ServerVersion.AutoDetect(mySqlConnectionStr)
+    ));
+
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
