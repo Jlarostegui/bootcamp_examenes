@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ApoloApi.DataAccess
+namespace ApoloApi.DataAccess.Entidades
 {
     public partial class Payment
     {

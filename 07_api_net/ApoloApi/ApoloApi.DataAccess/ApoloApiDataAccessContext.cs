@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using ApoloApi.DataAccess.Entidades;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace ApoloApi.DataAccess
 {
-    public partial class ApoloApiDataAccess : DbContext
+    public partial class ApoloApiDataAccessContext : DbContext
     {
-        public ApoloApiDataAccess()
+        public ApoloApiDataAccessContext()
         {
         }
 
-        public ApoloApiDataAccess(DbContextOptions<ApoloApiDataAccess> options)
+        public ApoloApiDataAccessContext(DbContextOptions<ApoloApiDataAccessContext> options)
             : base(options)
         {
         }
