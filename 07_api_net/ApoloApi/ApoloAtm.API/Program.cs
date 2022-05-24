@@ -13,6 +13,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
 builder.Services.AddTransient<IProductService,ProductService>();
+builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();
+builder.Services.AddTransient<ICustomerService, CustomerService>();
 
 string mySqlConnectionStr = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApoloApiDataAccessContext>(
