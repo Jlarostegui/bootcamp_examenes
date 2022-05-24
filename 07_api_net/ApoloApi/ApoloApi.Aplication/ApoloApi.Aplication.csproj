@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ApoloApi.Application.contracts\ApoloApi.Application.contracts.csproj" />
+    <ProjectReference Include="..\ApoloApiDataAccess.contracts\ApoloApiDataAccess.contracts.csproj" />
+  </ItemGroup>
+
 </Project>

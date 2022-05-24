@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ApoloApi.BusinessModels\ApoloApi.BusinessModels.csproj" />
+  </ItemGroup>
+
 </Project>
