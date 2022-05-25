@@ -1,13 +1,11 @@
-﻿namespace ApoloApiDataAccess.contracts.Dto
+﻿namespace ApoloApi.BusinessModels.Models.Customer
 {
-    public class CustormersDto
+    public class CustomerRequest
     {
-
-        public int CustomerNumber { get; set; }
-        public string CustomerName { get; set; } = null!;
-        public string ContacLastName { get; set; } = null!;
+        public int Number { get; set; }
+        public string Client { get; set; } = null!;
+        public string ContactLasName { get; set; } = null!;
         public string ContactFirstName { get; set; } = null!;
-        public string ContactLastName { get; set; } = null!;
         public string Phone { get; set; } = null!;
         public string AddressLine1 { get; set; } = null!;
         public string? AddressLine2 { get; set; }
@@ -17,6 +15,5 @@
         public string Country { get; set; } = null!;
         public int? SalesRepEmployeeNumber { get; set; }
         public decimal? CreditLimit { get; set; }
-
     }
 }

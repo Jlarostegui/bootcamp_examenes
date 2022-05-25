@@ -33,5 +33,12 @@ namespace ApoloAtm.API.Controllers
                 return NoContent();
             }
         }
+
+        [HttpPost]
+        public IActionResult AddCustomer(CustomerRequest customer)
+        {
+            CustomerResponse? newCustomer = _icustomerService.AddCustomer(customer);
+            return Ok(newCustomer);
+        }
     }
 }

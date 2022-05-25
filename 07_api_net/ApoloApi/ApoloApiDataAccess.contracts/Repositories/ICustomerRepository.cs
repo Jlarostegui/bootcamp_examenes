@@ -5,6 +5,10 @@ namespace ApoloApiDataAccess.contracts.Repositories
      public interface ICustomerRepository
     {
         CustormersDto ? GetCustomerByName(string name);
+
+        CustormersDto? AddCustomer(CustormersDto customer);
+       
+
        
     }
 }

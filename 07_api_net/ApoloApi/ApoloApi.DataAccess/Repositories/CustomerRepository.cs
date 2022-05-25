@@ -1,4 +1,5 @@
-﻿using ApoloApiDataAccess.contracts.Dto;
+﻿using ApoloApi.DataAccess.Entidades;
+using ApoloApiDataAccess.contracts.Dto;
 using ApoloApiDataAccess.contracts.Repositories;
 
 namespace ApoloApi.DataAccess.Repositories
@@ -19,25 +20,48 @@ namespace ApoloApi.DataAccess.Repositories
                 where customer.CustomerName.Contains(name) 
                 select new CustormersDto
                 {
-                    CustomerNumber = customer.CustomerNumber,
-                    CustomerName = customer.CustomerName,
-                    ContactLastName = customer.ContactLastName,
-                    ContactFirstName = customer.ContactFirstName,
-                    Phone = customer.Phone,
-                    AddressLine1 = customer.AddressLine1,
-                    AddressLine2 = customer.AddressLine2,
-                    City = customer.City,
-                    State = customer.State,
-                    PostalCode = customer.PostalCode,
-                    Country = customer.Country,
-                    SalesRepEmployeeNumber = customer.SalesRepEmployeeNumber,
-
+                
                 };
 
              return query.FirstOrDefault();
         }
+        public CustormersDto AddCustomer(CustormersDto customer)
+        {
+            Customer newCustomer = new Customer
+            {
+                CustomerNumber = customer.CustomerNumber,
+                CustomerName = customer.ContactLastName,
+                ContactLastName = customer.ContactLastName,
+                ContactFirstName = customer.ContactFirstName,
+                Phone = customer.Phone,
+                AddressLine1 = customer.AddressLine1,
+                City = customer.City,
+                Country = customer.Country,
+                SalesRepEmployeeNumber = customer.SalesRepEmployeeNumber
 
-    
-    }
+            };
+
+            var customerInserted = _context.Customers.Add(newCustomer);
+
+            CustormersDto result = new CustormersDto
+            {
+                CustomerNumber = customerInserted.Entity.CustomerNumber,
+                CustomerName = customerInserted.Entity.CustomerName,
+                ContactLastName = customerInserted.Entity.ContactLastName,
+                ContactFirstName = customerInserted.Entity.ContactFirstName,
+                Phone = customerInserted.Entity.Phone,
+                AddressLine1 = customerInserted.Entity.AddressLine1,
+                AddressLine2 = customerInserted.Entity.AddressLine2,
+                City = customerInserted.Entity.City,
+                State = customerInserted.Entity.State,
+                PostalCode = customerInserted.Entity.PostalCode,
+                Country = customerInserted.Entity.Country,
+                SalesRepEmployeeNumber = customerInserted.Entity.SalesRepEmployeeNumber
+
+            };
+
+            return result;
+        }
+    }   
 }
  
