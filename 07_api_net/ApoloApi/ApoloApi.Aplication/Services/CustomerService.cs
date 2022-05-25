@@ -35,7 +35,6 @@ namespace ApoloApi.Aplication.Services
             return result;
         }
        
-
     }
 }
 

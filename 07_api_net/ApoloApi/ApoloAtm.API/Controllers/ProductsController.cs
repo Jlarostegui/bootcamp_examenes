@@ -32,5 +32,12 @@ namespace ApoloAtm.API.Controllers
                 return NoContent();
             }
         }
+
+        [HttpPost]
+        public IActionResult Addproduct(ProductRequest product)
+        {
+            ProductResponse? newProduct = _productService.AddProduct(product);
+            return Ok(newProduct);
+        }
     }
 }

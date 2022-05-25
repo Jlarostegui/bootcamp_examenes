@@ -21,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ApoloApi.Aplication\ApoloApi.Aplication.csproj" />
     <ProjectReference Include="..\ApoloApi.CrossCutting\ApoloApi.CrossCutting.csproj" />
     <ProjectReference Include="..\ApoloApi.DataAccess\ApoloApi.DataAccess.csproj" />
   </ItemGroup>

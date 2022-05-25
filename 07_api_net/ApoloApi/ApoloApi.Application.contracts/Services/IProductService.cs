@@ -5,5 +5,6 @@ namespace ApoloApi.Application.contracts.Services
     public interface IProductService
     {
         ProductResponse? GetProductResponse(string code);
+        ProductResponse? AddProduct(ProductRequest product);
     }
 }

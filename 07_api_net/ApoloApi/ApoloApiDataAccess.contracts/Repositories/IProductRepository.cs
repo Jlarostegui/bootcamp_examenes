@@ -6,6 +6,7 @@ namespace ApoloApiDataAccess.contracts.Repositories
     {
 
         public ProductDto? GetProductById(string productCode);
+        public ProductDto AddProduct(ProductDto product);
 
     }
 }
