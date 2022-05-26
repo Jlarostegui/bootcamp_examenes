@@ -7,5 +7,7 @@ namespace ApoloApi.Application.contracts.Services
         ProductResponse? GetProductResponse(string code);
         ProductResponse? AddProduct(ProductRequest product);
         bool DeleteProduct(string productCode);
+        ProductResponse UpdateProduct( string code, ProductUpdateRequest product);
+
     }
 }

@@ -78,5 +78,35 @@ namespace ApoloApi.Aplication.Services
                 return true;
             }
         }
+
+        public ProductResponse UpdateProduct(string code ,ProductUpdateRequest product)
+        {
+            ProductDto newProduct = new ProductDto
+            {
+                BuyPrice = product.Price,
+                Msrp = product.Msrp,
+                ProductCode = code,
+                ProductDescription = product.Description,
+                ProductLine = product.Line,
+                ProductName = product.Name,
+                ProductScale = product.Scale,
+                ProductVendor = product.Vendor,
+                QuantityInStock = product.QuantityInStock,
+            };
+
+            ProductDto productedUpdated = _ProductRepository.UpdateProduct(newProduct);
+
+            _uOw.Commit();
+
+            ProductResponse result = new ProductResponse
+            {
+                Description = productedUpdated.ProductDescription,
+                Price = productedUpdated.BuyPrice,
+                Stok = productedUpdated.QuantityInStock
+            };
+
+            return result;
+        }
+
     }
 }

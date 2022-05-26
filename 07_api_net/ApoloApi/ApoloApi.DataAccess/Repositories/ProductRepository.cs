@@ -90,5 +90,42 @@ namespace ApoloApi.DataAccess.Repositories
             _context.Products.Remove(productToDelete);
         }
 
+        public ProductDto UpdateProduct(ProductDto product)
+        {
+            Product producttoUpdate = new Product
+            {
+                BuyPrice = product.BuyPrice,
+                Msrp = product.Msrp,
+                ProductCode = product.ProductCode,
+                ProductDescription = product.ProductDescription,
+                ProductLine = product.ProductLine,
+                ProductName = product.ProductName,
+                ProductScale = product.ProductScale,
+                ProductVendor = product.ProductVendor,
+                QuantityInStock = product.QuantityInStock,
+
+            };
+
+            var productToUpsate = _context.Products.Add(producttoUpdate);
+
+            ProductDto result = new ProductDto
+            {
+                BuyPrice = productToUpsate.Entity.BuyPrice,
+                Msrp = productToUpsate.Entity.Msrp,
+                ProductCode = productToUpsate.Entity.ProductCode,
+                ProductDescription = productToUpsate.Entity.ProductDescription,
+                ProductLine = productToUpsate.Entity.ProductLine,
+                ProductName = productToUpsate.Entity.ProductName,
+                ProductScale = productToUpsate.Entity.ProductScale,
+                ProductVendor = productToUpsate.Entity.ProductVendor,
+                QuantityInStock = productToUpsate.Entity.QuantityInStock
+
+            };
+
+            return result;
+
+        }
+
+
     }
 }

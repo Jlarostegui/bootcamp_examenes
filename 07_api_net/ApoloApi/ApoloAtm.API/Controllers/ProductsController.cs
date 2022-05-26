@@ -56,5 +56,13 @@ namespace ApoloAtm.API.Controllers
             }
 
         }
+
+        [HttpPut]
+        [Route("{code}")]
+        public IActionResult UpdatedProduct(string code ,ProductUpdateRequest product)
+        {
+            ProductResponse productUpdated = _productService.UpdateProduct(code, product);
+            return Ok(productUpdated);
+        }
     }
 }
