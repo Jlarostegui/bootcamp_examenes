@@ -39,5 +39,22 @@ namespace ApoloAtm.API.Controllers
             ProductResponse? newProduct = _productService.AddProduct(product);
             return Ok(newProduct);
         }
+
+        [HttpDelete]
+        [Route("{code}")]
+        public IActionResult DeleteProduct(string code)
+        {
+            bool resukt = _productService.DeleteProduct(code);
+
+            if (resukt)
+            {
+                return NoContent();
+            }
+            else
+            {
+                return BadRequest("El producto no existe");
+            }
+
+        }
     }
 }

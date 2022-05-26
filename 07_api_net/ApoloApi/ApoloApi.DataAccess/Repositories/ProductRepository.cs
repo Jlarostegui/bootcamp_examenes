@@ -72,5 +72,23 @@ namespace ApoloApi.DataAccess.Repositories
 
         }
 
+        public void DeleteProduct(ProductDto product)
+        {   
+            Product productToDelete = new Product
+            {
+                BuyPrice = product.BuyPrice,
+                Msrp = product.Msrp,
+                ProductCode = product.ProductCode,
+                ProductDescription = product.ProductDescription,
+                ProductLine = product.ProductLine,
+                ProductName = product.ProductName,
+                ProductScale = product.ProductScale,
+                ProductVendor = product.ProductVendor,
+                QuantityInStock = product.QuantityInStock,
+
+            };
+            _context.Products.Remove(productToDelete);
+        }
+
     }
 }

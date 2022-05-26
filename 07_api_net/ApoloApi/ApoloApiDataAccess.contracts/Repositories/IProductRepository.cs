@@ -7,6 +7,7 @@ namespace ApoloApiDataAccess.contracts.Repositories
 
         ProductDto? GetProductById(string productCode);
         ProductDto AddProduct(ProductDto product);
+        void DeleteProduct(ProductDto product);
 
     }
 }

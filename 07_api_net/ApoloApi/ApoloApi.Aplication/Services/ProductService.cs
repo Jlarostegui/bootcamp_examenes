@@ -62,5 +62,21 @@ namespace ApoloApi.Aplication.Services
            
             return result;
         }
+
+        public bool DeleteProduct(string productCode)
+        {
+            ProductDto? product = _ProductRepository.GetProductById(productCode);
+            if(product == null)
+            {
+                //throw new Exception("El producto que desea eliminar no exitse");
+                return false;
+            }
+            else
+            {
+                _ProductRepository.DeleteProduct(product);
+                _uOw.Commit();
+                return true;
+            }
+        }
     }
 }
