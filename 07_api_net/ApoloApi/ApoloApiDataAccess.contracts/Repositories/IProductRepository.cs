@@ -9,6 +9,7 @@ namespace ApoloApiDataAccess.contracts.Repositories
         ProductDto AddProduct(ProductDto product);
         void DeleteProduct(ProductDto product);
         ProductDto UpdateProduct(ProductDto product);
+        
 
 
     }

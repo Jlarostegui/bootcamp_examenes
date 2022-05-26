@@ -1,4 +1,5 @@
 ﻿using ApoloApi.DataAccess.Entidades;
+using ApoloApi.DataAccess.Mappers;
 using ApoloApiDataAccess.contracts.Dto;
 using ApoloApiDataAccess.contracts.Repositories;
 
@@ -6,62 +7,65 @@ namespace ApoloApi.DataAccess.Repositories
 {
     public class CustomerRepository : ICustomerRepository
     {
-        private ApoloApiDataAccessContext _context;
 
+
+        #region context
+        private ApoloApiDataAccessContext _context;
         public CustomerRepository(ApoloApiDataAccessContext context)
         {
             _context = context;
         }
+        #endregion
 
-        public CustormersDto? GetCustomerByName(string name)
+        #region GET
+        public CustormersDto? GetCustomerById(int number)
         {
             var query =
                 from customer in _context.Customers
-                where customer.CustomerName.Contains(name) 
-                select new CustormersDto
-                {
-                
-                };
+                where customer.CustomerNumber == number
+                select CustomerMapper.MaptoCustomerDtoFromCustomer(customer);
 
-             return query.FirstOrDefault();
+            return query.FirstOrDefault();
         }
+        #endregion
+
+        #region POST
         public CustormersDto AddCustomer(CustormersDto customer)
         {
-            Customer newCustomer = new Customer
-            {
-                CustomerNumber = customer.CustomerNumber,
-                CustomerName = customer.ContactLastName,
-                ContactLastName = customer.ContactLastName,
-                ContactFirstName = customer.ContactFirstName,
-                Phone = customer.Phone,
-                AddressLine1 = customer.AddressLine1,
-                City = customer.City,
-                Country = customer.Country,
-                SalesRepEmployeeNumber = customer.SalesRepEmployeeNumber
-
-            };
+            
+            Customer newCustomer =CustomerMapper.MaptoCustomerFromCustomerDto(customer);
 
             var customerInserted = _context.Customers.Add(newCustomer);
 
-            CustormersDto result = new CustormersDto
-            {
-                CustomerNumber = customerInserted.Entity.CustomerNumber,
-                CustomerName = customerInserted.Entity.CustomerName,
-                ContactLastName = customerInserted.Entity.ContactLastName,
-                ContactFirstName = customerInserted.Entity.ContactFirstName,
-                Phone = customerInserted.Entity.Phone,
-                AddressLine1 = customerInserted.Entity.AddressLine1,
-                AddressLine2 = customerInserted.Entity.AddressLine2,
-                City = customerInserted.Entity.City,
-                State = customerInserted.Entity.State,
-                PostalCode = customerInserted.Entity.PostalCode,
-                Country = customerInserted.Entity.Country,
-                SalesRepEmployeeNumber = customerInserted.Entity.SalesRepEmployeeNumber
+            CustormersDto result = CustomerMapper.MaptoCustomerDtoFromCustomer(customerInserted.Entity);
 
-            };
 
             return result;
         }
-    }   
+        #endregion
+
+        #region PUT 
+        public CustormersDto UpdateCustomer(CustormersDto customer)
+        {
+            Customer customerUpdate = CustomerMapper.MaptoCustomerFromCustomerDto(customer);
+
+           var customerToUpdate =  _context.Customers.Update(customerUpdate);
+
+            CustormersDto result = CustomerMapper.MaptoCustomerDtoFromCustomer(customerToUpdate.Entity);
+            return result;
+                 
+
+        }
+        #endregion
+
+        #region DELETE
+        public void DelteCustomer(CustormersDto customer)
+        {
+            Customer customerToDelete = CustomerMapper.MaptoCustomerFromCustomerDto(customer);
+            _context.Customers.Remove(customerToDelete);
+        }
+
+        #endregion
+    }
 }
  

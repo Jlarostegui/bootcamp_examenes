@@ -5,9 +5,11 @@ namespace ApoloApi.Application.contracts.Services
     public interface ICustomerService
 
     {
-        CustomerResponse? GetCustomerResponse(string name);
+        CustomerResponse? GetCustomerResponse(int customerCode);
 
         CustomerResponse? AddCustomer(CustomerRequest customer);
+
+ 
 
     }
 }

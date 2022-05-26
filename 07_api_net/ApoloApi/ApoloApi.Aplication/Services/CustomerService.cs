@@ -19,9 +19,9 @@ namespace ApoloApi.Aplication.Services
             _uOw = uOw;
         }
 
-        public CustomerResponse? GetCustomerResponse(string name)
+        public CustomerResponse? GetCustomerResponse(int customerCode)
         {
-            CustormersDto? customer = _CostumerRepository.GetCustomerByName(name);
+            CustormersDto? customer = _CostumerRepository.GetCustomerById(customerCode);
             CustomerResponse result = new CustomerResponse();
             if (customer != null)
             {
@@ -72,7 +72,7 @@ namespace ApoloApi.Aplication.Services
             return result;
         }
 
-
+     
     }
 }
 

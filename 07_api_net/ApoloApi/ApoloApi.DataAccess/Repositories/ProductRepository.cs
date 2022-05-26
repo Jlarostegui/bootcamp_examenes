@@ -106,19 +106,19 @@ namespace ApoloApi.DataAccess.Repositories
 
             };
 
-            var productToUpsate = _context.Products.Add(producttoUpdate);
+            var productToUpdate = _context.Products.Add(producttoUpdate);
 
             ProductDto result = new ProductDto
             {
-                BuyPrice = productToUpsate.Entity.BuyPrice,
-                Msrp = productToUpsate.Entity.Msrp,
-                ProductCode = productToUpsate.Entity.ProductCode,
-                ProductDescription = productToUpsate.Entity.ProductDescription,
-                ProductLine = productToUpsate.Entity.ProductLine,
-                ProductName = productToUpsate.Entity.ProductName,
-                ProductScale = productToUpsate.Entity.ProductScale,
-                ProductVendor = productToUpsate.Entity.ProductVendor,
-                QuantityInStock = productToUpsate.Entity.QuantityInStock
+                BuyPrice = productToUpdate.Entity.BuyPrice,
+                Msrp = productToUpdate.Entity.Msrp,
+                ProductCode = productToUpdate.Entity.ProductCode,
+                ProductDescription = productToUpdate.Entity.ProductDescription,
+                ProductLine = productToUpdate.Entity.ProductLine,
+                ProductName = productToUpdate.Entity.ProductName,
+                ProductScale = productToUpdate.Entity.ProductScale,
+                ProductVendor = productToUpdate.Entity.ProductVendor,
+                QuantityInStock = productToUpdate.Entity.QuantityInStock
 
             };
 
@@ -126,6 +126,6 @@ namespace ApoloApi.DataAccess.Repositories
 
         }
 
-
+        
     }
 }
