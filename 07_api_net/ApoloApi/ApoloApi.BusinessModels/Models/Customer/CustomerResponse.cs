@@ -9,5 +9,7 @@
         public string Country { get; set; }
         public int SalesRepEmployeeNumber { get; set; }
 
+        public int CustomerNumber { get; set; } 
+
     }
 }

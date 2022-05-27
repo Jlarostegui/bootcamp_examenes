@@ -2,10 +2,10 @@
 {
     public class CustomerRequest
     {
-        public int? Number { get; set; }
+        public int Number { get; set; }
         public string Client { get; set; } = null!;
-        public string ContactLasName { get; set; } = null!;
-        public string ContactFirstName { get; set; } = null!;
+        public string LastName { get; set; } = null!;
+        public string FirstName { get; set; } = null!;
         public string Phone { get; set; } = null!;
         public string AddressLine1 { get; set; } = null!;
         public string? AddressLine2 { get; set; }

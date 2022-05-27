@@ -5,9 +5,8 @@
 
         public int CustomerNumber { get; set; }
         public string CustomerName { get; set; } = null!;
-        public string ContacLastName { get; set; } = null!;
-        public string ContactFirstName { get; set; } = null!;
-        public string ContactLastName { get; set; } = null!;
+        public string LastName { get; set; } = null!;
+        public string FirstName { get; set; } = null!;
         public string Phone { get; set; } = null!;
         public string AddressLine1 { get; set; } = null!;
         public string? AddressLine2 { get; set; }

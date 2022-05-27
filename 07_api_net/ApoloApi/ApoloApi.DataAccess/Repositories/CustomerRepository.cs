@@ -8,7 +8,6 @@ namespace ApoloApi.DataAccess.Repositories
     public class CustomerRepository : ICustomerRepository
     {
 
-
         #region context
         private ApoloApiDataAccessContext _context;
         public CustomerRepository(ApoloApiDataAccessContext context)
@@ -49,7 +48,7 @@ namespace ApoloApi.DataAccess.Repositories
         {
             Customer customerUpdate = CustomerMapper.MaptoCustomerFromCustomerDto(customer);
 
-           var customerToUpdate =  _context.Customers.Update(customerUpdate);
+            var customerToUpdate =  _context.Customers.Update(customerUpdate);
 
             CustormersDto result = CustomerMapper.MaptoCustomerDtoFromCustomer(customerToUpdate.Entity);
             return result;
