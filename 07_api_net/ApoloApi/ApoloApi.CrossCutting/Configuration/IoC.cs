@@ -18,6 +18,8 @@ namespace ApoloApi.CrossCutting.Configuration
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();
             services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<IEmployeeServcice, EmployeeService>();
+            services.AddTransient<IEmployeeServcice, EmployeeService>();
             return services;
         }
     }

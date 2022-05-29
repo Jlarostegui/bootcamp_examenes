@@ -21,7 +21,7 @@ namespace ApoloApi.DataAccess.Mappers
             return result;
         }
 
-        public static EmployeeDto MaToEmployeeDto(Employee employee)
+        public static EmployeeDto MapToEmployeeDto(Employee employee)
         {
             EmployeeDto result = new EmployeeDto
             {

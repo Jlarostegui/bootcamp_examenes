@@ -26,7 +26,7 @@ namespace ApoloApi.Aplication.Services
             if (customer != null)
             {
                 result.Bussines = customer.CustomerName;
-                result.Name = customer.ContactFirstName;
+                result.Name = customer.FirstName;
                 result.Phone = customer.Phone;
                 result.Country = customer.Country;
 
@@ -43,8 +43,8 @@ namespace ApoloApi.Aplication.Services
             {
                 CustomerNumber = customer.Number,
                 CustomerName = customer.Client,
-                ContactLastName = customer.ContactLasName,
-                ContactFirstName = customer.ContactFirstName,
+                LastName = customer.LastName,
+                FirstName = customer.FirstName,
                 Phone = customer.Phone,
                 AddressLine1 = customer.AddressLine1,
                 AddressLine2 = customer.AddressLine2,
@@ -62,7 +62,7 @@ namespace ApoloApi.Aplication.Services
             CustomerResponse result = new CustomerResponse
             {
                 Bussines = customerInserted.CustomerName,
-                Name = customerInserted.ContactFirstName,
+                Name = customerInserted.FirstName,
                 Country = customerInserted.Country,
                 Phone = customerInserted.Phone
                  
